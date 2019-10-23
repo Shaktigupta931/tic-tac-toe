@@ -8,7 +8,7 @@ player1 = []
 player2 = []
 
 root = Tk()
-root.title("Tic Tac Toe :shakti")
+root.title("Tic Tac Toe by Shakti")
 
 button1 = ttk.Button(root, text = '')
 button1.grid(row = 0, column = 0, sticky = 'snew', ipadx = 40, ipady = 40)
