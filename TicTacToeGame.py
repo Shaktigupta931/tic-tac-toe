@@ -4,8 +4,8 @@ from tkinter import messagebox
 from random import randint
 
 activePlayer = 1
-player1 = [] 
-player2 = []
+shabhi = [] 
+tinav = []
 
 root = Tk()
 root.title("Tic Tac Toe :shakti")
@@ -48,23 +48,23 @@ button9.config(command = lambda: ButtonClick(9))
 
 def ButtonClick(id):
    global activePlayer
-   global player1
-   global player2
+   global shabhi
+   global tinav
 
    if(activePlayer == 1):
       setLayout(id, "X")
-      player1.append(id)
+      shabhi.append(id)
       root.title("Tic Tac Toe : Player 2")
       activePlayer = 2
-      print("P1:{}".format(player1))
+      print("P1:{}".format(shabhi))
       autoPlay()
 
    elif(activePlayer == 2):
       setLayout(id, "O")
-      player2.append(id)
+      tinav.append(id)
       root.title("Tic Tac Toe : Player 1")
       activePlayer = 1
-      print("P2:{}".format(player2))
+      print("P2:{}".format(tinav))
 
    checkWinner()
 
@@ -108,37 +108,37 @@ def setLayout(id, PlayerSymbol):
 
 def checkWinner():
    winner = -1
-   if((1 in player1) and (2 in player1) and (3 in player1)):
+   if((1 in shabhi) and (2 in shabhi) and (3 in shabhi)):
       winner=1
-   if((1 in player2) and (2 in player2) and (3 in player2)):
+   if((1 in tinav) and (2 in tinav) and (3 in tinav)):
       winner=2
-   if((4 in player1) and (5 in player1) and (6 in player1)):
+   if((4 in shabhi) and (5 in shabhi) and (6 in shabhi)):
       winner=1
-   if((4 in player2) and (5 in player2) and (6 in player2)):
+   if((4 in tinav) and (5 in tinav) and (6 in tinav)):
       winner=2
-   if((7 in player1) and (8 in player1) and (9 in player1)):
+   if((7 in shabhi) and (8 in shabhi) and (9 in shabhi)):
       winner=1
-   if((7 in player2) and (8 in player2) and (9 in player2)):
+   if((7 in tinav) and (8 in tinav) and (9 in tinav)):
       winner=2    
-   if((1 in player1) and (4 in player1) and (7 in player1)):
+   if((1 in shabhi) and (4 in shabhi) and (7 in shabhi)):
       winner=1
-   if((1 in player2) and (4 in player2) and (7 in player2)):
+   if((1 in tinav) and (4 in tinav) and (7 in tinav)):
       winner=2
-   if((2 in player1) and (5 in player1) and (8 in player1)):
+   if((2 in shabhi) and (5 in shabhi) and (8 in shabhi)):
       winner=1
-   if((2 in player2) and (5 in player2) and (8 in player2)):
+   if((2 in tinav) and (5 in tinav) and (8 in tinav)):
       winner=2
-   if((3 in player1) and (6 in player1) and (9 in player1)):
+   if((3 in shabhi) and (6 in shabhi) and (9 in shabhi)):
       winner=1
-   if((3 in player2) and (6 in player2) and (9 in player2)):
+   if((3 in tinav) and (6 in tinav) and (9 in tinav)):
       winner=2
-   if((1 in player1) and (5 in player1) and (9 in player1)):
+   if((1 in shabhi) and (5 in shabhi) and (9 in shabhi)):
    	  winner=1
-   if((1 in player2) and (5 in player2) and (9 in player2)):
+   if((1 in tinav) and (5 in tinav) and (9 in tinav)):
       winner=2
-   if((3 in player1) and (5 in player1) and (7 in player1)):
+   if((3 in shabhi) and (5 in shabhi) and (7 in shabhi)):
       winner=1
-   if((3 in player2) and (5 in player2) and (7 in player2)):
+   if((3 in tinav) and (5 in tinav) and (7 in tinav)):
       winner=2   
 
    if winner==1:
@@ -150,11 +150,11 @@ def checkWinner():
       exit()
 
 def autoPlay():
-	global player1
-	global player2
+	global shabhi
+	global tinav
 	emptyCells = []
 	for  cell in range(9):
-		if(not((cell+1 in player1) or (cell+1 in player2))):
+		if(not((cell+1 in shabhi) or (cell+1 in tinav))):
 			emptyCells.append(cell+1)
 	randIndex = randint(0, len(emptyCells)-1)
 	ButtonClick(emptyCells[randIndex])
